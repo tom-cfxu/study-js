@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <ul>
+            <li><a href="#">主页</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">课程介绍</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </nav>
+    <header>
+        <button id="toggle" class="toggle">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <h1>欢迎来到pornhub</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, inventore!</p>
+        <button class="cta-btn" id="open">登录</button>
+    </header>
+    <div class="container">
+        <h2>为什么选择pornhub</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum facere tempore veniam velit fuga
+            recusandae molestias quaerat, maxime quibusdam quo nobis officiis culpa ipsam pariatur provident,
+            reprehenderit necessitatibus eveniet sequi!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum vitae velit tempore perferendis quas nulla
+            laboriosam minus explicabo a quam?</p>
+        <h2>我们的教学宗旨</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam debitis, odit provident veritatis
+            asperiores consectetur animi recusandae alias eligendi similique?</p>
+        <h2>我们的优势</h2>
+        <ul>
+            <li>丰富的线上课程</li>
+            <li>优秀的师资团队</li>
+            <li>课后辅导及问答</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur magnam nisi illum similique facilis
+            ipsa, omnis velit fuga enim voluptate temporibus aliquid. Cum, fuga. Fugit eos obcaecati doloribus provident
+            blanditiis mollitia tempora, aut corporis alias iste incidunt quasi eum voluptatem. Maiores, ratione
+            aliquid. Earum saepe omnis, id neque ab dolor repellat adipisci cum! Quae facere, voluptates rem sit,
+            architecto adipisci suscipit molestias error non sunt ea similique exercitationem accusantium hic.</p>
+    </div>
+    <!-- modal状态框 -->
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3>登录</h3>
+            </div>
+            <div class="modal-content">
+                <p>登录了解更多课程及促销活动</p>
+                <form class="modal-form">
+                    <div>
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" class="form-input" placeholder="请输入姓名" />
+                    </div>
+                    <div>
+                        <label for="email">邮箱</label>
+                        <input type="text" id="email" class="form-input" placeholder="请输入邮箱" />
+                    </div>
+                    <div>
+                        <label for="password">密码</label>
+                        <input type="password" id="password" class="form-input" placeholder="请输入密码" />
+                    </div>
+                    <div>
+                        <label for="password2">确认密码</label>
+                        <input type="password" id="password2" class="form-input" placeholder="请输入确认密码" />
+                    </div>
+                    <input type="submit" value="提交" class="submit-btn" />
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
