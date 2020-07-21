@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.css" rel="stylesheet">
+    <title>食谱查询器</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>食谱查询器</h1>
+        <div class="flex">
+            <form class="flex">
+                <input type="text" id="search" placeholder="输入食物名称或关键字" />
+                <button class="search-btn" id="submit" type="submit" title="搜索">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+            <button class="random-btn" id="random" title="随机推荐">
+                <i class="fa fa-random"></i>
+            </button>
+        </div>
+        <div id="result-heading"></div>
+        <div id="meals" class="meals"></div>
+        <div id="single-meal"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
