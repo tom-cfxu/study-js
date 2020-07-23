@@ -4,6 +4,7 @@ const search = document.getElementById('search'),
     mealsEl = document.getElementById('meals'),
     resultHeading = document.getElementById('result-heading'),
     single_mealEl = document.getElementById('single-meal');
+// body = document.body;
 
 
 //searchMeal函数通过fetch请求API获取数据
@@ -46,7 +47,7 @@ function searchMeal(e) {
 }
 //addMealToDOM函数
 function addMealToDOM(meal) {
-    console.log(meal)
+    // console.log(meal)
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
         if (meal[`strIngredient${i}`]) {
@@ -85,11 +86,32 @@ function getMealById(mealID) {
             // console.log(data)
             const meal = data.meals[0];
             addMealToDOM(meal);
+            // console.log(mealsEl.offsetHeight)
+            singleEl = document.getElementById('single-meal');
+            console.log(singleEl.offsetTop)
+            window.scroll({
+                top: singleEl.offsetTop,
+                left: 0,
+                behavior: "smooth"
+            })
         }
         )
 }
+//getRandonMeal函数
+function getRandonMeal() {
+    mealsEl.innerHTML = "";
+    resultHeading.innerHTML = "";
+    fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+        .then((res) => res.json())
+        .then((data) => {
+            // console.log(data);
+            const meal = data.meals[0];
+            addMealToDOM(meal);
+        })
+}
 //事件监听
-submit.addEventListener("click", searchMeal)
+submit.addEventListener("click", searchMeal);
+random.addEventListener("click", getRandonMeal)
 mealsEl.addEventListener('click', e => {
     const mealInfo = e.path.find(item => {
         // console.log(item)
