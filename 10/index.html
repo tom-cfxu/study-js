@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.css" rel="stylesheet">
+    <title>音乐播放器</title>
+</head>
+
+<body>
+    <h1>音乐播放器</h1>
+    <div class="music-container" id="music-container">
+        <div class="music-info">
+            <h4 id="title">colorful</h4>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress">
+
+                </div>
+            </div>
+        </div>
+        <audio src="music/99RadioService - YOUTHFUL.mp3" id="audio"></audio>
+        <div class="img-container">
+            <img src="imgs/99RadioService - YOUTHFUL.png" alt="封面" id="cover">
+        </div>
+        <div class="navigation">
+            <button id="prev" class="action-btn">
+                <i class="fa fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn">
+                <i class="fa fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fa fa-forward"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fa fa-volume-down"></i>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
