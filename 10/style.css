@@ -139,3 +139,54 @@ body {
   transform: scale(0.95);
   opacity: 1;
 }
+.progress-volume-container {
+  width: 50px;
+  height: 120px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 10px #ddd;
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 10px 0;
+  transform: rotate(180deg);
+  display: none;
+}
+.progress-volume-container .progress-volume {
+  width: 5px;
+  height: 100%;
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+.progress-volume-container .progress-volume .progress2 {
+  background-color: #fe8daa;
+  width: 100%;
+  height: 0%;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  top: 0;
+  transition: height 0.1s linear;
+}
+.progress-volume-container .progress-volume .progress2:after {
+  cursor: pointer;
+  content: '';
+  border-radius: 50%;
+  border: 2px solid #f5cccc;
+  width: 8px;
+  height: 8px;
+  background-color: #fe8daa;
+  position: absolute;
+  bottom: -8px;
+  left: 3px;
+  transform: translate(-50%, -50%);
+}
+.show {
+  display: flex !important;
+}
