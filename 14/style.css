@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  position: relative;
+}
+h1 button {
+  position: absolute;
+  right: 0;
+  transform: translate(120%, -50%);
+  z-index: 2;
+}
+.btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 10px 15px;
+}
+.btn:focus {
+  outline: 0;
+}
+.btn-small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+.btn-ghost {
+  border: 0;
+  background-color: transparent;
+}
+.clear {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.cards {
+  perspective: 1000px;
+  position: relative;
+  height: 300px;
+  width: 500px;
+  max-width: 100%;
+}
+.cards .card {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.5em;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(50%) rotateY(-10deg);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.cards .card.active {
+  opacity: 1;
+  cursor: pointer;
+  z-index: 10;
+  transform: translateX(0) rotateY(0);
+}
+.cards .card.left {
+  transform: translateX(-50%) rotateY(10deg);
+}
+.cards .card.show-answer .inner-card {
+  transform: rotateX(180deg);
+}
+.cards .card .inner-card {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+.cards .card .inner-card .inner-card-back,
+.cards .card .inner-card .inner-card-front {
+  backface-visibility: hidden;
+  padding: 0 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+.cards .card .inner-card .inner-card-back p,
+.cards .card .inner-card .inner-card-front p {
+  user-select: none;
+}
+.cards .card .inner-card .inner-card-front {
+  transform: rotateX(0deg);
+  z-index: 2;
+}
+.cards .card .inner-card .inner-card-back {
+  transform: rotateX(180deg);
+}
+.inner-card-back::after,
+.inner-card-front::after {
+  content: '\f021 Filp';
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ddd;
+}
+.navigation {
+  display: flex;
+  margin: 20px 0;
+}
+.navigation p {
+  margin: 0 25px;
+}
+.navigation .nav-button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+.navigation .nav-button:focus {
+  outline: 0;
+}
+.add-container {
+  opacity: 0;
+  background-color: #f0f0f0;
+  border-top: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  transition: opacity 0.5s ease-in-out;
+}
+.add-container.show {
+  z-index: 2;
+  opacity: 1;
+}
+.add-container h3 {
+  margin: 10px 0;
+}
+.add-container .form-group label {
+  display: block;
+  margin: 20px 0 10px;
+}
+.add-container .form-group textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px;
+  min-width: 500px;
+  max-width: 100%;
+}
+.add-container .form-group textarea:focus {
+  outline: 0;
+}

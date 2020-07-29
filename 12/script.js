@@ -43,7 +43,11 @@ let score = 0;
 let time = 10;
 
 //难度选择
-let difficulty;
+let difficulty = localStorage.getItem('difficulty') !== null ?
+    localStorage.getItem('difficulty') : 'easy';
+//更新难度选项
+difficultySelect.value = localStorage.getItem('difficulty') !== null ?
+    localStorage.getItem('difficulty') : 'easy';
 //设置随机产生单词
 function getRandomWord() {
     return words[Math.floor(Math.random() * words.length)]
@@ -89,7 +93,17 @@ text.addEventListener('input', e => {
         updateScore();
         //清空输入框
         e.target.value = "";
-        time += 5;
+        switch (difficulty) {
+            case 'hard':
+                time += 2;
+                break;
+            case 'medium':
+                time += 3;
+                break;
+            default:
+                time += 5;
+                break;
+        }
         updateTime();
     }
 })
@@ -101,5 +115,7 @@ settingsBtn.addEventListener('click', () => {
 //下拉框事件监听
 settingsForm.addEventListener('change', (e) => {
     difficulty = e.target.value;
-    console.log(difficulty)
+    // console.log(difficulty)
+    localStorage.setItem('difficulty', difficulty);
+
 })
