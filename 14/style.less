@@ -55,6 +55,12 @@ h1 {
     left: 30px;
 }
 
+.joke {
+    position: absolute;
+    bottom: 30px;
+    left: 150px;
+}
+
 .cards {
     perspective: 1000px;
     position: relative;
@@ -173,7 +179,7 @@ h1 {
     bottom: 0;
     width: 100%;
     z-index: -1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 
     &.show {
         z-index: 2;
@@ -201,4 +207,24 @@ h1 {
             outline: 0;
         }
     }
+}
+
+.edit {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: transparent;
+    width: 50px;
+    z-index: 20;
+}
+
+.delete {
+    position: absolute;
+    top: -10px;
+    left: 70px;
+    background-color: #f37171;
+    border-color: #f37171;
+    color: #fff;
+    width: 50px;
+    z-index: 20;
 }

@@ -13,33 +13,15 @@
     <button id="clear" class="clear btn">
         <i class="fas fa-trash"></i>一键清除
     </button>
+    <button id="joke" class="joke btn">
+        <i class="fa fa-coffee"></i>脑筋急转弯
+    </button>
     <h1>助记卡片
         <button id="show" class="btn btn-small">
             <i class="fas fa-plus"></i>添加新卡片
         </button>
     </h1>
     <div class="cards" id="card-container">
-        <!-- <div class="card active show-answer">
-            <div class="inner-card">
-                <div class="inner-card-front">
-                    <p>JavaScript是什么?</p>
-                </div>
-                <div class="inner-card-back">
-                    <p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的高级编程语言。</p>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="inner-card">
-                <div class="inner-card-front">
-                    <p>ECMAScript和JavaScript的关系?</p>
-                </div>
-                <div class="inner-card-back">
-                    <p>ECMAScript 和 JavaScript 的关系是,前者是后者的规格,后者是前者的一种实现(另外的 ECMAScript 方言还有 JScript 和
-                        ActionScript)。日常场合,这两个词是可以互换的。</p>
-                </div>
-            </div>
-        </div> -->
     </div>
     <div class="navigation">
         <button id="prev" class="nav-button">
@@ -66,6 +48,24 @@
         </div>
         <button id="add-card" class="btn">
             <i class="fas fa-plus"></i>添加卡片
+        </button>
+    </div>
+    <div id="edit-container" class="add-container">
+        <h1>编辑卡片
+            <button id="edit-hide" class="btn btn-small btn-ghost">
+                <i class="fas fa-times"></i>
+            </button>
+        </h1>
+        <div class="form-group">
+            <label for="edit-question">问题</label>
+            <textarea id="edit-question" placeholder="请输入问题"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="edit-answer">答案</label>
+            <textarea id="edit-answer" placeholder="请输入答案"></textarea>
+        </div>
+        <button id="edit-card" class="btn">
+            <i class="fa fa-code"></i>修改卡片
         </button>
     </div>
     <script src="script.js"></script>
