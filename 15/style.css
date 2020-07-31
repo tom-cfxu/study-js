@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button {
+  cursor: pointer;
+}
+button:active {
+  transform: scale(0.95);
+}
+input:focus,
+button:focus {
+  outline: 0;
+}
+header {
+  background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596195307339&di=a74e512cdb5e70d447e7eaf3759f4f0a&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F0%2F5879bad7672df.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  position: relative;
+}
+header:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+header h1 {
+  margin: 0 0 30px;
+}
+header form {
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+}
+header form input {
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 15px 30px;
+  width: 100%;
+}
+header form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #56acfd;
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 16px;
+  padding: 14px 30px;
+}
+header * {
+  z-index: 1;
+}
+.container {
+  margin: 30px auto;
+  max-width: 100%;
+  width: 500px;
+}
+.container h2 {
+  font-weight: 300;
+}
+.container p {
+  text-align: center;
+}
+ul.song {
+  list-style-type: none;
+  padding: 0;
+}
+ul.song li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.btn {
+  background-color: #56acfd;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  padding: 4px 10px;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+}
+.centered button {
+  transform: scale(1.3);
+  margin: 15px;
+}
