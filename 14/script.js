@@ -20,8 +20,7 @@ const cardContainer = $('card-container'),
     addContainer = $('add-container'),
     editContainer = $('edit-container');
 //当前卡片下标,便于追踪卡片
-let currentActiveCard = 0;
-
+let currentActiveCard = getCurrentPage();
 //创建空数组储存cardDOM对象
 const cardsEl = [];
 
@@ -41,10 +40,26 @@ const cardsData = getCardsData();
 //         answer: '2'
 //     },
 // ];
+// 通过本地存储获取当前页
+function getCurrentPage() {
+    const currentPage = JSON.parse(localStorage.getItem('currentPage'))
+    return currentPage === null ? 0 : currentPage;
+};
+
 // 通过本地存储获取数据
 function getCardsData() {
     const cards = JSON.parse(localStorage.getItem('cards'))
     return cards === null ? [] : cards;
+}
+// 进行本地存储数据
+function setCardsData(cards) {
+    localStorage.setItem('cards', JSON.stringify(cards));
+    localStorage.setItem('currentPage', JSON.stringify(currentActiveCard));
+    window.location.reload();
+}
+// 进行本地存储当前页
+function setCurrentPage() {
+    localStorage.setItem('currentPage', JSON.stringify(currentActiveCard));
 }
 //创建cards获取数据
 function createCards() {
@@ -60,7 +75,7 @@ function updateCurrentText() {
 function createCard(data, index) {
     const card = document.createElement('div');
     card.classList.add('card');
-    if (index == 0) {
+    if (index == currentActiveCard) {
         card.classList.add('active')
     }
     card.innerHTML = `
@@ -92,6 +107,7 @@ function getKey(obj) {
     }
     return str = arr.join('&')
 }
+//获取笑话
 async function getJoke() {
     const pagenum = Math.floor(Math.random() * 100);
     const pagesize = 5;
@@ -109,15 +125,19 @@ async function getJoke() {
         // mode: 'no-cors',
         body: getKey(body)
     };
-    fetch(
-        `https://api.jisuapi.com/jzw/search`, requestOptions).then(res => {
-            console.log(res)
-        });
-    // fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=rice`).then(res => {
-    //     console.log(res)
-    // });
-    // const data = await res.json();
-    // console.log(res)
+    const res = await fetch(`https://cors-anywhere.herokuapp.com/https://api.jisuapi.com/jzw/search`, requestOptions);
+
+    const data = await res.json();
+    data.result.list.forEach(data => {
+        const card = {
+            question: data.content,
+            answer: data.answer
+        }
+        createCard(card);
+        cardsData.push(card);
+        setCardsData(cardsData)
+    })
+    // console.log(data)
 }
 //事件监听
 //随机获取笑话
@@ -162,6 +182,7 @@ nextBtn.addEventListener('click', () => {
     cardsEl[currentActiveCard].className = 'card active'
     // console.log(cardsEl);
     updateCurrentText();
+    setCurrentPage()
 })
 //上一页
 prevBtn.addEventListener('click', () => {
@@ -174,6 +195,7 @@ prevBtn.addEventListener('click', () => {
     cardsEl[currentActiveCard].className = 'card active'
     // console.log(cardsEl);
     updateCurrentText();
+    setCurrentPage()
 })
 //添加新卡片
 showBtn.addEventListener('click', () => {
@@ -187,11 +209,7 @@ hideBtn.addEventListener('click', () => {
 editHideBtn.addEventListener('click', () => {
     editContainer.classList.remove('show');
 })
-// 进行本地存储
-function setCardsData(cards) {
-    localStorage.setItem('cards', JSON.stringify(cards));
-    window.location.reload();
-}
+
 //一键清除
 clearBtn.addEventListener('click', () => {
     localStorage.clear();

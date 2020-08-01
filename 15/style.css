@@ -78,11 +78,11 @@ header * {
 .container p {
   text-align: center;
 }
-ul.song {
+ul.songs {
   list-style-type: none;
   padding: 0;
 }
-ul.song li {
+ul.songs li {
   display: flex;
   align-items: center;
   justify-content: space-between;
