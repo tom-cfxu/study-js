@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.draggable-list {
+  border: 1px solid #d3d4d3;
+  color: #34444f;
+  padding: 0;
+  list-style-type: none ;
+}
+.draggable-list li {
+  background-color: #fff;
+  display: flex;
+  flex: 1;
+}
+.draggable-list li.over .draggable {
+  background-color: #c4c2c2;
+}
+.draggable-list li.right .person-name {
+  color: #5bd686;
+}
+.draggable-list li.wrong .person-name {
+  color: #ff3838;
+}
+.draggable-list li .number {
+  background-color: #c3c7ca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  width: 60px;
+  height: 60px;
+}
+.draggable-list li .draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  padding: 15px;
+  flex: 1;
+  justify-content: space-between !important;
+}
+.draggable-list li .draggable .person-name {
+  margin: 0;
+}
+.draggable-list li:not(:last-of-type) {
+  border-bottom: 1px solid #d3d4d3;
+}
+.check-btn {
+  background-color: #c3c7ca;
+  border: none;
+  color: #34444f;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.check-btn:focus {
+  outline: none;
+}
+.check-btn:active {
+  transform: scale(0.95);
+}
